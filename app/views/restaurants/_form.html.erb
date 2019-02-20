@@ -1,0 +1,22 @@
+<%= simple_form_for(@restaurant) do |f| %>
+  <% if @restaurant.errors.any? %>
+  <h3>OOps!!!! You have these errors:</h3>
+  <ul>
+    <% @restaurant.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.input :category %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>

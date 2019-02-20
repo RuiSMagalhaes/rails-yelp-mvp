@@ -1,0 +1,22 @@
+<h1>New review for <%= @restaurant.name %></h1>
+
+<%= simple_form_for([@restaurant, @review]) do |f| %>
+  <% if @review.errors.any? %>
+  <h3>OOps!!!! You have these errors:</h3>
+  <ul>
+    <% @review.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
+  <div class="form-inputs">
+    <%= f.input :content %>
+    <%= f.input :rating %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>
